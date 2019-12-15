@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <title>Notes On Creating A Hexo Theme | 我的博客Hexo</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="description" content="SetupTo Update NPM: npm install npm@latest -g. In 2015 it makes sense to use NVM.  NVM InstallationInstructions. Update NPM: npm install npm@latest -g Hexo: why can’t you use helper functions in s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes On Creating A Hexo Theme">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2016&#x2F;01&#x2F;02&#x2F;2016-01-02-Notes-On-Creating-A-Hexo-Theme&#x2F;index.html">
+<meta property="og:site_name" content="我的博客Hexo">
+<meta property="og:description" content="SetupTo Update NPM: npm install npm@latest -g. In 2015 it makes sense to use NVM.  NVM InstallationInstructions. Update NPM: npm install npm@latest -g Hexo: why can’t you use helper functions in s">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https:&#x2F;&#x2F;s3.amazonaws.com&#x2F;ptsteadman-images&#x2F;hexo.png">
+<meta property="article:published_time" content="2016-01-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-12-15T09:03:17.091Z">
+<meta property="article:author" content="Wisely Lee">
+<meta property="article:tag" content="Programming">
+<meta property="article:tag" content="Design">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;s3.amazonaws.com&#x2F;ptsteadman-images&#x2F;hexo.png">
+  
+    <link rel="alternative" href="/atom.xml" title="我的博客Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+    
+  <meta content="{{ title }}" name="description">
+  <meta content="{{ title }}" name="keywords">
+  <meta content="{{ title }}" name="author">
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+
+  <!-- Global styles START -->   
+  
+<link rel="stylesheet" href="/metronic/assets/plugins/font-awesome/css/font-awesome.min.css">
+
+  
+<link rel="stylesheet" href="/metronic/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+  <!-- Global styles END --> 
+   
+  <!-- Page level plugin styles START -->
+  
+<link rel="stylesheet" href="/metronic/assets/pages/css/animate.css">
+
+  
+<link rel="stylesheet" href="/metronic/assets/plugins/owl.carousel/assets/owl.carousel.css">
+
+  <!-- Page level plugin styles END -->
+  
+<link rel="stylesheet" href="/metronic/assets/plugins/fullpage/fullpage.css">
+
+
+  <!-- Theme styles START -->
+  
+<link rel="stylesheet" href="/metronic/assets/pages/css/components.css">
+
+  
+<link rel="stylesheet" href="/metronic/assets/pages/css/slider.css">
+
+  
+<link rel="stylesheet" href="/metronic/assets/corporate/css/style.css">
+
+  
+<link rel="stylesheet" href="/metronic/assets/pages/css/portfolio.css">
+
+  
+<link rel="stylesheet" href="/metronic/assets/corporate/css/style-responsive.css">
+
+  
+<link rel="stylesheet" href="/metronic/assets/corporate/css/themes/red.css">
+
+  
+<link rel="stylesheet" href="/css/theme-styles.css">
+
+  <!-- Theme styles END -->
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body class="corporate " id="corporate">
+  <!-- BEGIN TOP BAR -->
+<div class="pre-header"style="display: none;">
+  <div class="container container-full-w">
+    <div class="row">
+      <!-- BEGIN TOP BAR LEFT PART -->
+      <div class="col-md-6 col-sm-6 col-xs-9 additional-shop-info">
+	<ul class="list-unstyled list-inline">
+	  <li><i class="fa fa-phone"></i><span></span></li>
+	  <li><i class="fa fa-envelope-o"></i><span>wisely@jack.com</span></li>
+	</ul>
+      </div>
+      <!-- END TOP BAR LEFT PART -->
+      <!-- BEGIN TOP BAR MENU -->
+      <div class="col-md-6 col-sm-6 col-xs-3 additional-nav">
+	<ul class="list-unstyled list-inline pull-right">
+	  <li><a href="/login">Log In</a></li>
+	</ul>
+      </div>
+      <!-- END TOP BAR MENU -->
+    </div>
+  </div>        
+</div>
+<!-- END TOP BAR -->
+<!-- BEGIN HEADER -->
+<div class="header ">
+  <div class="container container-full-w">
+    <a class="site-logo" href="/" id="logo"><div class="site-logo__image"></div><span class="site-logo__title"></span></a>
+
+
+    <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+
+    <!-- BEGIN NAVIGATION -->
+    <div class="header-navigation pull-right font-transform-inherit">
+      <ul>
+	
+	<li class="">
+	  <a  href="/case-studies/">Case Studies</a>
+	</li>
+	
+	<li class="">
+	  <a  href="/blog/">Blog</a>
+	</li>
+	
+	<!-- BEGIN TOP SEARCH -->
+	<!-- END TOP SEARCH -->
+      </ul>
+    </div>
+    <!-- END NAVIGATION -->
+  </div>
+</div>
+<!-- Header END -->
+
+
+  <div class="main"  >
+      <div class="container container-post">
+  <ul class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="
+      /blog/">Blog</a></li>
+    <li class="active">Notes On Creating A Hexo Theme</li>
+  </ul>
+  <section id="main">
+    
+    <h2 itemprop="name" class="article-title">
+      <a class="article-title" href="/2016/01/02/2016-01-02-Notes-On-Creating-A-Hexo-Theme/">Notes On Creating A Hexo Theme</a>
+    </h2>
+
+
+    <div class="row">
+  <div class="col-md-12 col-sm-12 blog-posts">
+    <article id="post-2016-01-02-Notes-On-Creating-A-Hexo-Theme" class="article article-type-post blog-item" itemscope itemprop="blogPost">
+      <div class="article-meta">
+      </div>
+      <div class="article-inner">
+        
+        
+        <header class="article-header">
+          <ul class="blog-info">
+            <li class="blog-publish-date">
+              <time datetime="2016-01-01T16:00:00.000Z" itemprop="datePublished">02 January 2016</time>
+ / <a href="http://yoursite.com/2016/01/02/2016-01-02-Notes-On-Creating-A-Hexo-Theme/#disqus_thread" class="article-comment-link">Comments</a>
+            </li>
+            <li class="blog-tags-list">
+              
+  
+    <a href="/tags/Programming/" title="Programming">Programming</a>,
+  
+    <a href="/tags/Design/" title="Design">Design</a>
+  
+
+
+            </li>
+            <li class="blog-socials">
+              <!-- BEGIN SOCIAL -->
+<!--<div class="col-md-6 col-sm-6">-->
+  <ul class="social-footer list-unstyled list-inline pull-right">
+    
+      <li><a href="https://weibo.com/u/1764041113" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li>
+    
+  </ul>  
+<!--</div>-->
+<!-- END SOCIAL -->
+
+            </li>
+          </ul>
+        </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+          
+            <div class="image-strip">
+<img src="https://s3.amazonaws.com/ptsteadman-images/hexo.png" class="">
+</div>
+
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>To Update NPM: <code>npm install npm@latest -g</code>.</p>
+<p>In 2015 it makes sense to use NVM.  <a href="http://linoxide.com/ubuntu-how-to/install-node-js-ubuntu" target="_blank" rel="noopener">NVM Installation<br>Instructions</a>.</p>
+<p>Update NPM: <code>npm install npm@latest -g</code></p>
+<p>Hexo: why can’t you use helper functions in source code?<br>This should be in docs.</p>
+<h2 id="Creating-a-Custom-Index-File-in-Hexo"><a href="#Creating-a-Custom-Index-File-in-Hexo" class="headerlink" title="Creating a Custom Index File in Hexo"></a>Creating a Custom Index File in Hexo</h2><p>Trying to generate a custom index file in source, hexo would ignore<br><code>source/index.md</code> no matter what I did.  What I had to do was uninstall<br><code>hexo-generator-index</code>.  <a href="https://github.com/hexojs/hexo/issues/1077" target="_blank" rel="noopener">See<br>here</a>.  Then it works.  So, that<br>will be part of the setup for my theme.  But, it’s worth it in order to properly<br>seperate the theme from the content, I think.  Having everyone edit the theme<br>index.ejs template is no good.</p>
+<h2 id="Hexo-Rendering-Raw-EJS-File-Problem-I-Encountered"><a href="#Hexo-Rendering-Raw-EJS-File-Problem-I-Encountered" class="headerlink" title="Hexo Rendering Raw EJS File Problem I Encountered"></a>Hexo Rendering Raw EJS File Problem I Encountered</h2><p>Sometimes the server would keep rendering an old version of my code, but as<br>text.  So I’d see stuff like</p>
+<pre><code>&lt;% if (site.tags.length){ %&gt;</code></pre><p>The raw ejs, essentially.  Restarting the server or running <code>hexo clean</code> didn’t<br>do anything.</p>
+<p>After some time, I realized it was due to the gedit swap files being read by<br>hexo as the actual layout files: for example, <code>tag.ejs~</code>.  My <code>partial</code> helpers<br>looked like: <code>&lt;%- partial(&#39;_partials/tag&#39;) %&gt;</code>, and apparently hexo was reading<br>in <code>tag.ejs~</code> instead of <code>tag.ejs</code>.  And therefore, the ejs wasn’t rendering.</p>
+<p>To fix this, I simply changed my partial helper to <code>&lt;%-
+partial(&#39;_partials/tag.ejs&#39;) %&gt;</code>.  Problem solved.</p>
+<h2 id="Hexo-Excerpt-Variable"><a href="#Hexo-Excerpt-Variable" class="headerlink" title="Hexo Excerpt Variable"></a>Hexo Excerpt Variable</h2><p>I was confused by the behavior of the hexo <code>excerpt</code> variable.  If you define<br><code>excerpt: something</code> in the front matter, hexo ignores that.  Instead, to get it<br>to work, one needs to add a <code>&lt;!-- more --&gt;</code> comment in the source of the post.<br>Or, you can install a plugin that allows you to define custom excerpt in the<br>front matter.</p>
+<h2 id="Scripts-Directory"><a href="#Scripts-Directory" class="headerlink" title="Scripts Directory"></a>Scripts Directory</h2><p>One of the things I really discovered too late is the “Scripts” directory in the<br>theme folder.  In Hexo, the various plugins drive the structure of the site, as<br>opposed to the placement of different files and directories, as in Jekyll.  The<br>plugins programatically create folder structure, etc, where in Jekyll I mostly<br>used the liquid markup to structure the site.  </p>
+<p>The problem is, then, that the user wants to extend hexo to do some sort of<br>custom thing.  If one had to publish a new plugin, that’d be too much work.  But<br>the theme level scripts folder allows one to extend the base hexo functionality<br>in ‘user space’ effectively.</p>
+
+          
+        </div>
+      </div>
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2019/12/15/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Previous Post</strong>
+    </a>
+  
+  
+    <a href="/2015/05/02/2015-05-02-How-To-Impress/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Next Post</strong>
+    </a>
+  
+</nav>
+
+      
+      <br>
+    </article>
+
+
+    
+
+  </div>
+</div>
+
+  </section>
+</div>
+
+  </div>
+  
+    <div class="section-footer">
+    <div class="section-inner">
+        <div class="section-content">
+            <div class="col-lg-12 padding-h-60">
+                <div class="row row-center row-header">
+                    <div class="col-lg-12">
+                        <h3>Contact <span class="selected">Information.</span></h3>
+                    </div>
+                </div>
+                <div class="row row-center about-row">
+                    <div class="col-lg-6 about-col">
+                        <div class="address-block">
+                            <div id="map" class="g-map"></div>
+                            <script>
+                              function initMap() {
+                                var point = {lat: 37.7839256, lng: -122.4322163};
+                                var map = new google.maps.Map(
+                                  document.getElementById('map'), {zoom: 16, center: point});
+                                var marker = new google.maps.Marker({position: point, map: map});
+                              }
+                            </script>
+                            <script async defer
+                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks_A2m5LhySAMVMmBbVmOXnuL7ptnjs8&callback=initMap">
+                            </script>
+                            <div class="address-block-inner">
+                                <p>1489 Webster St</p>
+                                <p>6th Floor</p>
+                                <p>San Francisco, CA 94115</p>
+                                <p>Phone: (650)383-0295</p>
+                                <p>Email: hello@decentral.solutions</p>
+                                <p>Skype: video@decentral.solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 about-col">
+                        <div class="about-us">
+                            <h5>About Us</h5>
+                            <p>Decentral Solutions is the defacto consulting group with experience in bringing pre-ICO companies over 30M USD in funding. We serve internationally and are headquartered in the San Francisco Bay Area.</p>
+                            <div class="about-us-list">
+                                <p>SMART CONTRACT SECURITY AUDIT</p>
+                                <p>PENETRATION TESTING</p>
+                                <p>SECURE STORAGE PROCESS DESIGN</p>
+                                <p>KYC/AML SECURITY REQUIREMENTS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="row flex-row footer-row">
+                <!-- BEGIN COPYRIGHT -->
+                <div class="col-md-6 col-sm-6 padding-top-10 col-left">
+                    <div class="copyright">
+                        <p>&copy; 2019 我的博客Hexo</p>
+                        <p><a href="javascript:;">Privacy Policy</a> | <a href="javascript:;">Terms of Service</a></p>
+                    </div>
+                    <!-- END COPYRIGHT -->
+                </div>
+                <div class="col-md-6 col-sm-6 padding-top-10 col-right col-v-center">
+                    <div class="row flex-row row-100 row-right">
+                        <div class="links">
+                            <a href=""></a>
+                            <a href=""></a>
+                        </div>
+                        <!-- BEGIN SOCIAL -->
+<!--<div class="col-md-6 col-sm-6">-->
+  <ul class="social-footer list-unstyled list-inline pull-right">
+    
+      <li><a href="https://weibo.com/u/1764041113" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li>
+    
+  </ul>  
+<!--</div>-->
+<!-- END SOCIAL -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+</div>
+
+  
+  <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
+<!--[if lt IE 9]>
+
+<script src="/metronic/assets/plugins/respond.min.js"></script>
+
+<![endif]--> 
+
+<script src="/metronic/assets/plugins/jquery.min.js"></script>
+
+
+<script src="/metronic/assets/plugins/jquery-migrate.min.js"></script>
+
+
+<script src="/metronic/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+<script src="/metronic/assets/corporate/scripts/back-to-top.js"></script>
+
+
+<script src="/metronic/assets/plugins/owl.carousel/owl.carousel.min.js"></script>
+
+
+<script src="/metronic/assets/corporate/scripts/layout.js"></script>
+
+
+<script src="/js/wow.min.js"></script>
+
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        Layout.init();    
+        Layout.initOWL();
+        Layout.initTwitter();
+        //Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+        //Layout.initNavScrolling();
+      if(window.location.pathname == '/') {
+        Layout.initSectionsScrolling();
+      }
+	new WOW().init();
+    });
+</script>
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN PAGE-SPECIFIC PLUGINS -->
+
+
+<!-- BEGIN PAGE-SPECIFIC PLUGINS --> 
+
+
+
+
+
+
+
+<!-- END PAGE-SPECIFIC PLUGINS --> 
+
+<!-- BEGIN INTEGRATIONS -->
+
+
+
+
+
+<!-- END INTEGRATIONS -->
+
+</body>
+</html>
